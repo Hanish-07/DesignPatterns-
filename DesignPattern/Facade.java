@@ -9,7 +9,7 @@ public class Facade {
 
 	private OfferingList offeringList;
 
-	private String selectedProduct;
+	private int selectedProduct;
 
 	private int nProductCategory;
 
@@ -23,16 +23,34 @@ public class Facade {
 
 	private String password;
 
+	private Login login = new Login();
+
+	private boolean success;
+
+
 	public void startFacade() {
-		System.out.println("Facade pattern initiated ");
-		userType = login() ? 1:0;
-		menuType = 0;
-		System.out.println("Select from available Product Menu \n 1. Meat Product Menu \n 2. Produce Product Menu ");
-		Scanner scan = new Scanner(System.in);
-		selectedProduct = scan.nextLine();
-		if (selectedProduct.equalsIgnoreCase("Meat Product Menu")) {
+		System.out.println("---HELLO!!---");
+		System.out.println("----------Facade Pattern has been Implemented---------");
+		System.out.println("---LOGIN---");
+		System.out.println("Enter 0 for Buyer");
+		System.out.println("Enter 1 for Seller");
+		Scanner sc = new Scanner(System.in);
+		userType = sc.nextInt();
+		if(userType != 1 && userType != 0){
+			System.out.println("User Not Found");
+			sc.close();
+		}
+		success = login.login(userType);
+		if(success == false)
+		{
+			System.out.println("Invalid credentials");
+			sc.close();
+		}
+		System.out.println("Select an option(Number) from available Product Menu \n 1. Meat Product Menu \n 2. Produce Product Menu ");
+		selectedProduct = sc.nextInt();
+		if (selectedProduct == 1) {
 			SelectProduct(new MeatProductMenu(), userType);
-		} else if (selectedProduct.equalsIgnoreCase("Produce Product Menu")) {
+		} else if (selectedProduct == 2) {
 			SelectProduct(new ProduceProductMenu(), userType);
 			menuType = 1;
 		} else {
@@ -60,45 +78,10 @@ public class Facade {
 			System.out.println(productIterator.Next(iterate));
 			System.out.println(oi.Next(iterate2));
 		}
-		scan.close();
+		sc.close();
 		
 	}
 
-	public boolean login() {
-		System.out.println("Enter Username ");
-		@SuppressWarnings("resource")
-		Scanner scan = new Scanner(System.in);
-		username = scan.next();
-		System.out.println("Enter Password ");
-		password = scan.next();
-		userType = validation(username, password);
-		return (userType > 0);
-	}
-
-	public int validation(String username, String password) {
-		if ((username.equalsIgnoreCase("tutu")) && (password.equalsIgnoreCase("1111"))) {
-			System.out.println("Welcome Tutu ");
-			userType = 0;
-		}
-		else if ((username.equalsIgnoreCase("mimi")) && (password.equalsIgnoreCase("2222"))) {
-			System.out.println("Welcome mimi ");
-			userType = 0;
-		}
-		else if ((username.equalsIgnoreCase("nana")) && (password.equalsIgnoreCase("3333"))) {
-			System.out.println("Welcome mimi ");
-			userType = 0;
-		}
-		else if ((username.equalsIgnoreCase("pepe")) && (password.equalsIgnoreCase("3333"))) {
-			System.out.println("Welcome pepe ");
-			userType = 1;
-		}
-		else {
-			System.out.println("Invalid User ");
-			System.exit(-1);
-		}
-
-		return userType;
-	}
 
 	public void addTrading(Trading t) {
 		t.addTrading();
