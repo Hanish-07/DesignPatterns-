@@ -1,12 +1,8 @@
 import java.util.*;
 
-public class OfferingList {
+public class OfferingList {  // Implemention of the Offering List class that connects with the Offering Iterator of the Iterator Design Pattern.
 
-	private Trading trading;
-
-	private OfferingIterator offeringIterator;
-
-	ArrayList<String> offering = new ArrayList<>();
+	ArrayList<String> offering = new ArrayList<>(); // Displaying the lists of things offered.
 
 	OfferingList(MeatProductMenu m) {
 		offering.add("Offering for Beef");

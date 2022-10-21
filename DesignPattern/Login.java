@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Login{
+public class Login{  		// It stores the username and password in Facade design pattern  by creating the login functionalities
 
     private String username;
 

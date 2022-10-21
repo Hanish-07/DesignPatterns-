@@ -1,4 +1,4 @@
-public abstract class NodeVisitor {
+public abstract class NodeVisitor {  // From the Visitor design pattern it implements the node vistior
 
 	public abstract Reminder visitProduct(Product product);
 

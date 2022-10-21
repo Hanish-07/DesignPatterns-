@@ -1,10 +1,8 @@
 import java.util.*;
-import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Register{
+public class Register{      // Implements the Register class called in the Facade class for new user registration
 
     private String username;
 
@@ -13,7 +11,7 @@ public class Register{
 
     public boolean Registration(int userType) throws IOException
     {
-        System.out.println("Enter Username ");
+        System.out.println("Enter  the Username ");
 		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		username = scan.next();
@@ -31,7 +29,7 @@ public class Register{
                 }
                 catch(IOException e)
                 {
-                    System.out.println("File not found");
+                    System.out.println("File not found(error)");
                 }  
         }
         else{
@@ -46,7 +44,7 @@ public class Register{
                 }
                 catch(IOException e)
                 {
-                    System.out.println("File not found");
+                    System.out.println("File not found(error)");
                 }  
         }
           

@@ -1,4 +1,4 @@
-public abstract class Person {
+public abstract class Person {  // Implemention of the abstract person class from the Factory method pattern
 
 	protected static ProductMenu productMenu;
 

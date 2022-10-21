@@ -1,11 +1,7 @@
 import java.util.*;
 @SuppressWarnings("rawtypes")
 
-public class Product extends Reminder{
-	
-	private ClassProductList classProductList;
-
-	private Trading trading;
+public class Product extends Reminder{						// Implemention of the iterator pattern diagram
 
 	ArrayList<String> prod = new ArrayList<>();
 
@@ -20,7 +16,7 @@ public class Product extends Reminder{
 	}
 
 	public Iterator createIterator() {
-		return this.prod.iterator();
+		return this.prod.iterator();						// Calling the iterator pattern object
 	}
 
 	public Reminder accept(NodeVisitor nodeVisitor) {

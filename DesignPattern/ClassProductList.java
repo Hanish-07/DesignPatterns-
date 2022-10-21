@@ -1,12 +1,8 @@
 import java.util.ArrayList;
 
-public class ClassProductList {
-
-	private ReminderVisitor reminderVisitor;
+public class ClassProductList { 			// Implemention of Visitor design pattern
 
 	ArrayList<Product> product = new ArrayList<>();
-
-	private ProductIterator productIterator;
 
 	public void accept(NodeVisitor visitor) {
 

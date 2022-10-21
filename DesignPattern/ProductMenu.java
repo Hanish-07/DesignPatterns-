@@ -1,6 +1,4 @@
-public interface ProductMenu {
-
-	//private Person person;
+public interface ProductMenu { 		// Factory Method product menu implementation
 
 	public abstract void showMenu();
 

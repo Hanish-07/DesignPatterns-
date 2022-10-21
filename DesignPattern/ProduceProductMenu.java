@@ -1,4 +1,4 @@
-public class ProduceProductMenu implements ProductMenu {
+public class ProduceProductMenu implements ProductMenu { 	// Implements the Produce Product Menu class of the Bridge design pattern
 
 	@Override
 	public void showMenu() {
@@ -31,7 +31,7 @@ public class ProduceProductMenu implements ProductMenu {
 	}
 
 	public void createProductList() {
-		System.out.println("Product List created ...");
+		System.out.println("Product List  will be created ...");
 	}
 
 	public void AttachProductToUser() {
@@ -39,7 +39,7 @@ public class ProduceProductMenu implements ProductMenu {
 	}
 
 	public void productOperation() {
-		System.out.println("Operation performed on the Product...");
+		System.out.println("Operations  performed on the Product...");
 	}
 
 	public void SelectProduct(int UserType) {

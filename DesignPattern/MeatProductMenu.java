@@ -1,4 +1,4 @@
-public class MeatProductMenu implements ProductMenu {
+public class MeatProductMenu implements ProductMenu {  // Implements the Meat product Menu from the Factory method design pattern
 
 	@Override
 	public void showMenu() {

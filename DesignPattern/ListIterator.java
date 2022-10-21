@@ -1,6 +1,6 @@
 import java.util.Iterator;
 
-public abstract class ListIterator {
+public abstract class ListIterator {   //Abstract class ListIterator of Iterator design pattern 
 	@SuppressWarnings("rawtypes")
 	public abstract boolean hasNext(Iterator iterator);
 

@@ -1,7 +1,7 @@
 import java.util.*;
 import java.util.Map.Entry;
 
-public class UserInfoItem {
+public class UserInfoItem {  // Implements the class that displayes the info of the items of the user or add new items.
 
     HashMap<String,String> userProducts = new HashMap<>();
 

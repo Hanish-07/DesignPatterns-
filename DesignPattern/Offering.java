@@ -1,6 +1,5 @@
-public class Offering {
+public class Offering { 	//Implments the Offering class that is connected to the Offering iterator of the iterator design pattern
 
-	private OfferingList offeringList;
 
 	public void decideBidding() {
 		System.out.println("deciding the bidding....");

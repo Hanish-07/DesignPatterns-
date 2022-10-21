@@ -1,8 +1,6 @@
 import java.util.Iterator;
 
-public class OfferingIterator extends ListIterator {
-
-	private OfferingList offeringList;  //Because the relation may not be correct
+public class OfferingIterator extends ListIterator { 		//Implements the Offering Iterator class from the Iterator design pattern
 
 	@SuppressWarnings("rawtypes")
 	@Override

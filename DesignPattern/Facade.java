@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Facade {
+public class Facade {  //Here we implement the Facade class diagram
 
 	private int userType;
 
@@ -11,17 +11,7 @@ public class Facade {
 
 	private int selectedProduct;
 
-	private int nProductCategory;
-
-	private ClassProductList theProductList;
-
-	private Person thePerson;
-
 	private int menuType;
-
-	private String username;
-
-	private String password;
 
 	private Login login = new Login();
 
@@ -32,39 +22,39 @@ public class Facade {
 	private Register register = new Register();
 
 
-	public void startFacade() {
+	public void startFacade() {  				// facade pattern diagram will be intitiate by this fn
 		Scanner sc = new Scanner(System.in);
-		System.out.println("---HELLO!!---");
-		System.out.println("Enter 0 to Login");
-		System.out.println("Enter 1 to Register");
+		System.out.println("____----HELLO!---____");
+		System.out.println("To LOGIN = Enter 0");
+		System.out.println("To REGISTR = Enter 1");
 		option = sc.nextInt();
-		if(option == 0)
+		if(option == 0) 							// The Login page is initiated
 		{
-			System.out.println("----------Facade Pattern has been Implemented---------");
-			System.out.println("---LOGIN---");
-			System.out.println("Enter 0 for Buyer");
-			System.out.println("Enter 1 for Seller");
+			System.out.println("Facade Pattern has been Implemented");  
+			System.out.println("_____---LOGIN---____-");
+			System.out.println("For BUYER = Enter 0");
+			System.out.println("For SELLER = Enter 1");
 			userType = sc.nextInt();
 			if(userType != 1 && userType != 0){
-				System.out.println("User Not Found");
+				System.out.println(" No User Found");
 				sc.close();
 			}
 			success = login.login(userType);
 			if(success == false)
 			{
-				System.out.println("Invalid credentials");
+				System.out.println("Invalid credentials, Please Try to use vaild credentials");
 				sc.close();
 			}
 		}
-		if(option == 1)
+		if(option == 1)								// The registration page is initiated
 		{
 			System.out.println("----------Facade Pattern has been Implemented---------");
-			System.out.println("---REGISTER---");
-			System.out.println("Enter 0 for Buyer");
-			System.out.println("Enter 1 for Seller");
+			System.out.println("____---REGISTER---_____");
+			System.out.println("For BUYER = Enter 0");
+			System.out.println("For SELLER = Enter 1");
 			userType = sc.nextInt();
 			try{
-				register.Registration(userType);
+				register.Registration(userType);  	//In the register class The user option is passed as an argument for registration 
 			}
 			catch(Exception e){
 				System.out.println("Unable to register at this moment, please try again");
@@ -72,8 +62,8 @@ public class Facade {
 			}
 		}
 		
-		System.out.println("Select an option(Number) from available Product Menu \n 1. Meat Product Menu \n 2. Produce Product Menu ");
-		selectedProduct = sc.nextInt();
+		System.out.println("Select an optionfrom available Product Menu \n 1. Meat Product Menu \n 2. Produce Product Menu ");
+		selectedProduct = sc.nextInt(); 		// The user option is selected for creating a meat or produce product menu options
 		if (selectedProduct == 1) {
 			SelectProduct(new MeatProductMenu(), userType);
 		} else if (selectedProduct == 2) {
@@ -83,11 +73,11 @@ public class Facade {
 			System.out.println("Wrong Selection");
 			System.exit(-1);
 		}
-		System.out.println("Implementing Visitor Pattern....");
-		remind(menuType);
+		System.out.println("Implementing Visitor Pattern...."); 
+		remind(menuType);											// Implemention of Visitor pattern function
 		System.out.println("Implementing Iterator pattern ....");
 		if(menuType == 1)
-			productList = new Product(new ProduceProductMenu());
+			productList = new Product(new ProduceProductMenu());	// Implemention of Iterator pattern function
 		else
 			productList = new Product(new MeatProductMenu());
 		@SuppressWarnings("rawtypes")

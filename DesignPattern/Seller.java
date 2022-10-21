@@ -1,4 +1,4 @@
-public class Seller extends Person {
+public class Seller extends Person { // Implements the Seller class extending the Person Class of the Factory Method.
 
 	Seller() {
 		super(productMenu);
@@ -10,7 +10,7 @@ public class Seller extends Person {
 
 	@Override
 	public void showMenu() {
-		System.out.println("Seller Menu items....");
+		System.out.println("Menu items of seller....");
 	}
 
 	@Override
