@@ -27,25 +27,51 @@ public class Facade {
 
 	private boolean success;
 
+	private int option;
+
+	private Register register = new Register();
+
 
 	public void startFacade() {
-		System.out.println("---HELLO!!---");
-		System.out.println("----------Facade Pattern has been Implemented---------");
-		System.out.println("---LOGIN---");
-		System.out.println("Enter 0 for Buyer");
-		System.out.println("Enter 1 for Seller");
 		Scanner sc = new Scanner(System.in);
-		userType = sc.nextInt();
-		if(userType != 1 && userType != 0){
-			System.out.println("User Not Found");
-			sc.close();
-		}
-		success = login.login(userType);
-		if(success == false)
+		System.out.println("---HELLO!!---");
+		System.out.println("Enter 0 to Login");
+		System.out.println("Enter 1 to Register");
+		option = sc.nextInt();
+		if(option == 0)
 		{
-			System.out.println("Invalid credentials");
-			sc.close();
+			System.out.println("----------Facade Pattern has been Implemented---------");
+			System.out.println("---LOGIN---");
+			System.out.println("Enter 0 for Buyer");
+			System.out.println("Enter 1 for Seller");
+			userType = sc.nextInt();
+			if(userType != 1 && userType != 0){
+				System.out.println("User Not Found");
+				sc.close();
+			}
+			success = login.login(userType);
+			if(success == false)
+			{
+				System.out.println("Invalid credentials");
+				sc.close();
+			}
 		}
+		if(option == 1)
+		{
+			System.out.println("----------Facade Pattern has been Implemented---------");
+			System.out.println("---REGISTER---");
+			System.out.println("Enter 0 for Buyer");
+			System.out.println("Enter 1 for Seller");
+			userType = sc.nextInt();
+			try{
+				register.Registration(userType);
+			}
+			catch(Exception e){
+				System.out.println("Unable to register at this moment, please try again");
+				sc.close();
+			}
+		}
+		
 		System.out.println("Select an option(Number) from available Product Menu \n 1. Meat Product Menu \n 2. Produce Product Menu ");
 		selectedProduct = sc.nextInt();
 		if (selectedProduct == 1) {
